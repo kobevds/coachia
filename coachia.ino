@@ -1,83 +1,61 @@
 // Coachia
 // by Team Francis
 
-#include <Servo.h> 
- 
-Servo left;
-Servo right;
- 
-void setup() 
-{ 
-  left.attach(8);  // attaches the servo on pin 9 to the servo object 
-  right.attach(9);  // attaches the servo on pin 9 to the servo object 
-} 
- 
- 
-void loop() 
-{ 
-  goLeft(100);
-  goRight(100);
-  goStraight(200);
-  goBack(1000);
-  delay(5000);
+#include <Servo.h>
+
+Servo servoLeft;
+Servo servoRight;
+
+void setup()
+{
+  servoLeft.attach(8);
+  servoRight.attach(9);
+}
+
+void loop()
+{
+  goLeft(1000);
+  delay(1000);
+  goRight(1000);
+  delay(1000);
+  goStraight(2000);
+  delay(1000);
+  goBack(2000);
+  delay(1000);
 }
 
 void goLeft(int duration)
 {
-  left.write(180);
-  
+  servoLeft.writeMicroseconds(1700);
+  servoRight.writeMicroseconds(1700);
   delay(duration);
-  
-  // Slow down !
-  for(int pos = 180; pos > 90; pos-=1)
-  {
-    left.write(pos);
-    delay(15);
-  }
+  servoLeft.writeMicroseconds(1500);
+  servoRight.writeMicroseconds(1500);
 }
 
 void goRight(int duration)
 {
-  right.write(180);
-  
+  servoLeft.writeMicroseconds(1300);
+  servoRight.writeMicroseconds(1300);
   delay(duration);
-  
-  // Slow down !
-  for(int pos = 180; pos > 90; pos-=1)
-  {
-    right.write(pos);
-    delay(15);
-  }
+  servoLeft.writeMicroseconds(1500);
+  servoRight.writeMicroseconds(1500);
 }
 
 void goStraight(int duration)
 {
-  left.write(180);
-  right.write(180);
-  
+  servoLeft.writeMicroseconds(1300);
+  servoRight.writeMicroseconds(1700);
   delay(duration);
-  
-  // Slow down !
-  for(int pos = 180; pos > 90; pos-=1)
-  {
-    left.write(pos);
-    right.write(pos);
-    delay(15);
-  }
+  servoLeft.writeMicroseconds(1500);
+  servoRight.writeMicroseconds(1500);
 }
 
 void goBack(int duration)
 {
-  left.write(1);
-  right.write(1);
-  
+  servoLeft.writeMicroseconds(1700);
+  servoRight.writeMicroseconds(1300);
   delay(duration);
-  
-  // Slow down !
-  for(int pos = 1; pos < 90; pos += 1)
-  {
-    left.write(pos);
-    right.write(pos);
-    delay(15);
-  }
+  servoLeft.writeMicroseconds(1500);
+  servoRight.writeMicroseconds(1500);
 }
