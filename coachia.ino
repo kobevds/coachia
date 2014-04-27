@@ -1,5 +1,5 @@
 // Coachia
-// by Team Francis
+// by Morning Morning
 
 #include <IRremote.h>
 #include <Servo.h>
