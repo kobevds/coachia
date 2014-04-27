@@ -57,6 +57,7 @@ void doForwards()
   servoLeft.writeMicroseconds(1300);
   delay(15);
   servoRight.writeMicroseconds(1700);
+  delay(15);
 }
 
 void doBackwards()
@@ -64,6 +65,7 @@ void doBackwards()
   servoLeft.writeMicroseconds(1700);
   delay(15);
   servoRight.writeMicroseconds(1300);
+  delay(15);
 }
 
 void doLeft()
@@ -71,6 +73,7 @@ void doLeft()
   servoLeft.writeMicroseconds(1700);
   delay(15);
   servoRight.writeMicroseconds(1700);
+  delay(15);
 }
 
 void doRight()
@@ -78,6 +81,7 @@ void doRight()
   servoLeft.writeMicroseconds(1300);
   delay(15);
   servoRight.writeMicroseconds(1300);
+  delay(15);
 }
 
 void doStop()
@@ -85,4 +89,5 @@ void doStop()
   servoLeft.writeMicroseconds(1500);
   delay(15);
   servoRight.writeMicroseconds(1500);
+  delay(15);
 }
