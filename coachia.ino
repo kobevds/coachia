@@ -28,7 +28,8 @@ void setup()
   servoRight.attach(9);
 }
 
-void loop() {
+void loop()
+{
   if (irrecv.decode(&results)) {
     Serial.println(results.value);
     switch(results.value){
